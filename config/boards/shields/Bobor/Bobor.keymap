@@ -22,7 +22,7 @@
             bindings = <&bootloader>;
             layers = <_BT>;
         };
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";

@@ -1,0 +1,8 @@
+file_format: "1"
+id: Bobor
+name: BOBOR
+type: shield
+url: https://feeze.eu
+requires: [pro_micro]
+features:
+  - keys

@@ -1,9 +1,9 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_BOBOR
+if SHIELD_COKO
 
 config ZMK_KEYBOARD_NAME
-    default "Bobor"
+    default "Coko"
 
 endif

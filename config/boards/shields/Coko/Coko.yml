@@ -1,6 +1,6 @@
 file_format: "1"
-id: Bobor
-name: BOBOR
+id: Coko
+name: COKO
 type: shield
 url: https://feeze.eu
 requires: [pro_micro]

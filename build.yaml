@@ -17,4 +17,6 @@ include:
     shield: Coko
   - board: nice_nano_v2
     shield: Beach
+  - board: nice_nano_v2
+    shield: settings_reset
  

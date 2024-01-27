@@ -333,7 +333,7 @@
 // |  B  |  C  |  L  |  D  |  W  |            |  F  |  P  |  O  |  U  |  Y  |
 // |  N  |  S  |  R  |  T  |  J  |            |  G  |  H  |  A  |  E  |  I  |
 // | wCP |  Z  |  V  |  M  |  <  |            |  >  |  K  |  Q  |  X  | mCP |
-// | Alt | Ctl | Gui | Sft | _SYM(BSPC) | _NAV(SPC) | DEL |_NAV |_BTF |     |
+// | Alt | Ctl | Gui | Sft | _SYM(BSPC) | _NAV(SPC) | DEL |_NAV |_BTF | _B  |
                         bindings = <
    &kp B    &kp C     &kp L    &kp D     &kp W                  &kp F     &kp P   &kp O    &kp U    &kp Y
    &kp N    &kp S     &kp R    &kp T     &kp J                  &kp G     &kp H   &kp A    &kp E    &kp I 
@@ -347,7 +347,7 @@
 // | . , |  7  |  8  |  9  | ESC |      | INS | HOME |  UP  | END  | APP |
 // |  0  |  4  |  5  |  6  | TAB |      | DEL | LEFT | SPC  | RGHT | RET |
 // | PRN |  1  |  2  |  3  |  v- |      |  v+ | PGUP | DOWN | PGDN |  v. |
-// | Alt | Ctl | Gui | Sft | _SYM(BSPC) | Sft | DEL  | _NAV | _BTF |     |
+// | Alt | Ctl | Gui | Sft | _SYM(BSPC) | Sft | DEL  |  _B  | _BTF | _B  |
                         bindings = <
    &kp KP_DOT &kp N7    &kp N8   &kp N9    &kp ESC         &kp INS      &kp HOME  &kp UP    &kp END   &kp K_APP
    &kp N0     &kp N4    &kp N5   &kp N6    &kp TAB         &kp DEL      &kp LEFT  &kp SPACE &kp RIGHT &kp RET
@@ -361,7 +361,7 @@
 // |  \  |  |  |  =  |  _  |  {  |      |  }  |  "  |  ;  |  :  |  !  |
 // |  /  |  *  |  +  |  -  |  (  |      |  )  |  '  |  ,  |  .  |  ?  |
 // |  `  |  &  |  ^  |  %  |  [  |      |  ]  |  @  |  #  |  $  |  ~  |
-// | Alt | Ctl | Gui | Sft | BSPC | _NAV(SPC) | DEL |_NAV |_BTF |     |
+// | Alt | Ctl | Gui | Sft | BSPC | _NAV(SPC) | DEL |_NAV |_BTF | _B  |
                         bindings = <
    &kp BSLH  &kp PIPE  &kp EQUAL &kp UNDER &kp LBRC         &kp RBRC &kp DQT &kp SEMI  &kp COLON &kp EXCL
    &kp SLASH &kp STAR  &kp PLUS  &kp MINUS &kp LPAR         &kp RPAR &kp SQT &kp COMMA &kp DOT   &kp QMARK
@@ -371,16 +371,16 @@
                 };
 
                 btf_layer {
-// ----------------------------    ----------------------------------
-// | ESC | F7 | F8 | F9 | F11 |    | BT1 | BT2  | BT3 |  BT4  | BT5 |
-// | F10 | F4 | F5 | F6 | F12 |    |     | SHFT | GUI | CTRL  | ALT |
-// |     | F1 | F2 | F3 |     |    |     | USB  | RGB | BTCLR |     |
-//                |     |     |    |     |     |
+// -------------------------------     -------------------------------
+// | ESC | F7  | F8  | F9  | F11 |     | BT1 | BT2 | BT3 | BT4 | BT5 |
+// | F10 | F4  | F5  | F6  | F12 |     | USB | Sft | Gui | Ctl | Alt |
+// |     | F1  | F2  | F3  |     |     |     |     |     |     |     |
+// | Alt | Ctl | Gui | Sft |        |        | CLR |_NAV | _B  | _B  |
                         bindings = <
-   &kp ESC &kp F7 &kp F8 &kp F9 &kp F11       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_SEL 4
-   &kp F10 &kp F4 &kp F5 &kp F6 &kp F12       &none        &kp LSHFT    &kp LGUI        &kp LCTRL    &kp LALT
-   &none   &kp F1 &kp F2 &kp F3 &none         &none        &out OUT_TOG &rgb_ug RGB_OFF &bt BT_CLR   &none
-   &none   &none  &none  &none  &none         &none        &none        &to _NAV        &to _BASE    &to _BASE
+   &kp ESC &kp F7 &kp F8 &kp F9 &kp F11       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+   &kp F10 &kp F4 &kp F5 &kp F6 &kp F12       &out OUT_TOG &kp LSHFT    &kp LGUI     &kp LCTRL    &kp LALT
+   &none   &kp F1 &kp F2 &kp F3 &none         &none        &none        &none        &none        &none
+   &none   &none  &none  &none  &none         &none        &bt BT_CLR   &to _NAV     &to _BASE    &to _BASE
                         >;
                 };                
     };

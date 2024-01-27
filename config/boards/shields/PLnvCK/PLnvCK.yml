@@ -1,0 +1,9 @@
+file_format: "1"
+id: PLnvCK
+name: PLNVCK
+type: shield
+url: https://feeze.eu
+requires: [pro_micro]
+features:
+  - keys
+  - nice_view

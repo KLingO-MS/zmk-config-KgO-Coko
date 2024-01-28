@@ -333,7 +333,7 @@
         compatible = "zmk,keymap";
 
                 base_layer {
-                    display-name = "BASE";
+                    display-name = "Alphas";
 // -------------------------------            -------------------------------
 // |  B  |  C  |  L  |  D  |  W  |            |  F  |  P  |  O  |  U  |  Y  |
 // |  N  |  S  |  R  |  T  |  J  |            |  G  |  H  |  A  |  E  |  I  |
@@ -348,7 +348,7 @@
                 };
 
                 nav_layer {
-                    display-name = "NUM - NAV";
+                    display-name = "NumNav";
 // -------------------------------      ----------------------------------
 // | . , |  7  |  8  |  9  | ESC |      | INS | HOME |  UP  | END  | APP |
 // |  0  |  4  |  5  |  6  | TAB |      | DEL | LEFT | SPC  | RGHT | RET |
@@ -363,7 +363,7 @@
                 };
                 
                 sym_layer {
-                    display-name = "SYMBOLS";
+                    display-name = "Symbols";
 // -------------------------------      -------------------------------
 // |  \  |  |  |  =  |  _  |  {  |      |  }  |  "  |  ;  |  :  |  !  |
 // |  /  |  *  |  +  |  -  |  (  |      |  )  |  '  |  ,  |  .  |  ?  |
@@ -378,7 +378,7 @@
                 };
 
                 btf_layer {
-                    display-name = "Func & BT";
+                    display-name = "FuncBT";
 // -------------------------------     -------------------------------
 // | ESC | F7  | F8  | F9  | F11 |     | BT1 | BT2 | BT3 | BT4 | BT5 |
 // | F10 | F4  | F5  | F6  | F12 |     | USB | Sft | Gui | Ctl | Alt |

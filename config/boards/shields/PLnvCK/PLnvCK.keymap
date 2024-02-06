@@ -35,7 +35,7 @@
         };
 
 // ------------------------- UTILITY COMBOS --------------------------------
-        combo_BOOT {
+        combo_LOGON {
             timeout-ms = <50>;
             key-positions = <LH2 LH3 LH4>;
             bindings = <&kp LC(LA(DEL))>;

@@ -340,22 +340,22 @@
         compatible = "zmk,keymap";
 
                 base_layer {
-                    display-name = "Alphas";
+                    display-name = "Alpha";
 // -------------------------------            -------------------------------
-// |  P  |  C  |  D  |  L  |  W  |            |  F  |  M  |  O  |  U  |  Y  |
+// |  B  |  C  |  D  |  L  |  W  |            |  F  |  P  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |            |  G  |  H  |  A  |  E  |  I  |
-// | wCP |  Z  |  B  |  V  |  <  |            |  >  |  K  |  Q  |  X  | mCP |
+// | wCP |  Z  |  V  |  M  |  <  |            |  >  |  K  |  Q  |  X  | mCP |
 // | Alt | Ctl | Gui | _SYM(BSPC) | Sft |  RET |_NAV(SPC) |_NAV |_BTF | _B  |
                         bindings = <
-   &kp P    &kp C     &kp D    &kp L        &kp W               &kp F     &kp M        &kp O    &kp U    &kp Y
+   &kp B    &kp C     &kp D    &kp L        &kp W               &kp F     &kp P        &kp O    &kp U    &kp Y
    &kp N    &kp S     &kp T    &hsl LSHFT R &kp J               &kp G     &hsr LSHFT H &kp A    &kp E    &kp I 
-   &win_cp  &kp Z     &kp B    &kp V        &kp LT              &kp GT    &kp K        &kp Q    &kp X    &mac_cp
+   &win_cp  &kp Z     &kp V    &kp M        &kp LT              &kp GT    &kp K        &kp Q    &kp X    &mac_cp
    &kp LALT &kp LCTRL &kp LGUI &bst _SYM BSPC &kp LSHFT        &kp RET &spt _NAV SPACE &to _NAV &to _BTF &to _BASE
                         >;
                 };
 
                 nav_layer {
-                    display-name = "NumNav";
+                    display-name = "Num Nav";
 // -------------------------------       ----------------------------------
 // | ESC |  7  |  8  |  9  | TAB |       | INS | HOME |  UP  | END  | DEL |
 // |  0  |  4  |  5  |  6  | . , |       | PRN | LEFT | SPC  | RGHT | RET |
@@ -370,7 +370,7 @@
                 };
                 
                 sym_layer {
-                    display-name = "Symbols";
+                    display-name = "Symbol";
 // -------------------------------       -------------------------------
 // |  \  |  |  |  =  |  _  |  {  |       |  }  |  "  |  ;  |  :  |  !  |
 // |  /  |  *  |  +  |  -  |  (  |       |  )  |  '  |  ,  |  .  |  ?  |
@@ -385,7 +385,7 @@
                 };
 
                 btf_layer {
-                    display-name = "FuncBT";
+                    display-name = "Func BT";
 // -------------------------------     -------------------------------
 // | ESC | F7  | F8  | F9  | F11 |     | BT1 | BT2 | BT3 | BT4 | BT5 |
 // | F10 | F4  | F5  | F6  | F12 |     |     | Sft | Gui | Ctl | Alt |

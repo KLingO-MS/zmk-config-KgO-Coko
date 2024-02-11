@@ -16,8 +16,10 @@ manifest:
 #      revision: fix-battery-reporting
 #      revision: custom-wq-pr
 #      revision: main
-      remote: zephyr35 #zmkfirmware
-      revision: core/zephyr-3.5-update  #main
+      # remote: zephyr35
+      # revision: core/zephyr-3.5-update
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config

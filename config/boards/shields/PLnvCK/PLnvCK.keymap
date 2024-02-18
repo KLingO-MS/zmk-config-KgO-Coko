@@ -342,13 +342,13 @@
                 base_layer {
                     display-name = "Alpha";
 // -------------------------------            -------------------------------
-// |  B  |  C  |  P  |  L  |  W  |            |  F  |  D  |  O  |  U  |  Y  |
-// |  N  |  S  |  T  |  R  |  J  |            |  G  |  H  |  A  |  E  |  I  |
+// |  B  |  C  |  P  |  L  |  W  |            |  G  |  H  |  O  |  U  |  Y  |
+// |  N  |  S  |  T  |  R  |  J  |            |  F  |  D  |  A  |  E  |  I  |
 // | wCP |  Z  |  V  |  M  |  <  |            |  >  |  K  |  Q  |  X  | mCP |
 // | Alt | Ctl | Gui | _SYM(BSPC) | Sft |  RET |_NAV(SPC) |_NAV |_BTF | _B  |
                         bindings = <
-   &kp B    &kp C     &kp P    &kp L        &kp W               &kp F     &kp D        &kp O    &kp U    &kp Y
-   &kp N    &kp S     &kp T    &hsl LSHFT R &kp J               &kp G     &hsr LSHFT H &kp A    &kp E    &kp I 
+   &kp B    &kp C     &kp P    &kp L        &kp W               &kp G     &kp H        &kp O    &kp U    &kp Y
+   &kp N    &kp S     &kp T    &hsl LSHFT R &kp J               &kp F     &hsr LSHFT D &kp A    &kp E    &kp I 
    &win_cp  &kp Z     &kp V    &kp M        &kp LT              &kp GT    &kp K        &kp Q    &kp X    &mac_cp
    &kp LALT &kp LCTRL &kp LGUI &bst _SYM BSPC &kp LSHFT        &kp RET &spt _NAV SPACE &to _NAV &to _BTF &to _BASE
                         >;

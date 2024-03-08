@@ -366,14 +366,14 @@
                 nav_layer {
                     display-name = "Num Nav";
 // -------------------------------       ----------------------------------
-// | . , |  7  |  8  |  9  | INS |       | ESC | HOME |  UP  | END  | DEL |
-// |  0  |  4  |  5  |  6  | PSC |       | TAB | LEFT | SPC  | RGHT | RET |
-// |  v. |  1  |  2  |  3  |  v- |       |  v+ | PGUP | DOWN | PGDN | APP |
+// | . , |  7  |  8  |  9  | INS |       | pUP | HOME |  UP  | END  | ESC |
+// |  0  |  4  |  5  |  6  | PSC |       | pDN | LEFT | SPC  | RGHT | RET |
+// |  v. |  1  |  2  |  3  |  v- |       |  v+ | TAB  | DOWN | DEL  | APP |
 // | Alt | Ctl | Gui | _SYM(BSPC) | LSFT | RET | LSFT |  _B  | _BTF |_SYM |
                         bindings = <
-   &kp KP_DOT &kp N7    &kp N8   &kp N9    &kp INS         &kp ESC      &kp HOME  &kp UP    &kp END   &kp DEL
-   &kp N0     &kp N4    &kp N5   &kp N6    &kp PSCRN       &kp TAB      &kp LEFT  &kp SPACE &kp RIGHT &kp RET
-   &kp C_MUTE &kp N1    &kp N2   &kp N3    &kp C_VOL_DN    &kp C_VOL_UP &kp PG_UP &kp DOWN  &kp PG_DN &kp K_APP
+   &kp KP_DOT &kp N7    &kp N8   &kp N9    &kp INS         &kp PG_UP    &kp HOME  &kp UP    &kp END   &kp ESC
+   &kp N0     &kp N4    &kp N5   &kp N6    &kp PSCRN       &kp PG_DN    &kp LEFT  &kp SPACE &kp RIGHT &kp RET
+   &kp C_MUTE &kp N1    &kp N2   &kp N3    &kp C_VOL_DN    &kp C_VOL_UP &kp TAB   &kp DOWN  &kp DEL   &kp K_APP
    &kp LALT   &kp LCTRL &kp LGUI &bst _SYM BSPC &kp LSHFT  &kp RET      &kp LSHFT &to _BASE &lht _BTF _BTF &lht _SYM _SYM
                         >;
                 };

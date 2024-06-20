@@ -347,13 +347,13 @@
                     display-name = "Alpha";
 // -------------------------------            -------------------------------
 // |  Z  |  V  |  D  |  L  |  W  |            |  Q  |  P  |  O  |  U  |  Y  |
-// |  R  |  N  |  S  |  T  |  F  |            |  B  |  H  |  A  |  E  |  I  |
-// | wCP |  J  |  C  |  M  |  <  |            |  >  |  K  |  G  |  X  | mCP |
+// |  R  |  N  |  S  |  T  |  J  |            |  B  |  H  |  A  |  E  |  I  |
+// | wCP |  F  |  C  |  M  |  <  |            |  >  |  K  |  G  |  X  | mCP |
 // | Alt | Ctl | Gui | _SYM(BSPC) | Sft |  RET |_NAV(SPC) | Gui | Ctl | Alt |
                         bindings = <
    &kp Z        &kp V        &kp D       &kp L        &kp W           &kp Q     &kp P        &kp O       &kp U        &kp Y
-   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp F           &kp B     &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-   &win_cp      &kp J        &kp C       &kp M        &kp LT          &kp GT    &kp K        &kp G       &kp X        &mac_cp
+   &hml LALT R  &hml LCTRL N &hml LGUI S &hsl LSHFT T &kp J           &kp B     &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
+   &win_cp      &kp F        &kp C       &kp M        &kp LT          &kp GT    &kp K        &kp G       &kp X        &mac_cp
    &kp LALT     &kp LCTRL    &kp LGUI    &bst _SYM BSPC &kp LSHFT    &kp RET &spt _NAV SPACE &kp LGUI    &kp LCTRL    &kp LALT
                         >;
                 };

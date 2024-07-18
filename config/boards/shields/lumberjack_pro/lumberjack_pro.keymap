@@ -1,0 +1,292 @@
+/*
+ * Copyright (c) 2021 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include "keypos_34keys.h"
+
+#define _BASE    0
+#define _NAV     1
+#define _SYM     2
+#define _BTF     3
+
+#define RGB_BASE RGB_COLOR_HSB(30,100,10)
+#define RGB_SYM RGB_COLOR_HSB(20,100,10)
+#define RGB_NAV RGB_COLOR_HSB(0,100,10)
+#define RGB_BTF RGB_COLOR_HSB(220,100,10)
+
+/ {
+
+// ------------------------- MACROS --------------------------------
+    macros {
+        to_BASE: to_BASE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&rgb_ug RGB_BASE>
+                , <&tog _NAV>
+                ;
+        };
+
+        to_NAV: to_NAV {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&rgb_ug RGB_NAV>
+                , <&tog _NAV>
+                ;
+        };
+
+        mo_BTF: mo_BTF {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_tap &rgb_ug RGB_BTF>
+                , <&macro_press &mo _BTF>
+                , <&macro_pause_for_release>
+                , <&macro_tap &rgb_ug RGB_BASE>
+                , <&macro_release &mo _BTF>
+                ;
+        };
+
+        to_BOOT: to_BOOT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&rgb_ug RGB_COLOR_HSB(0,100,50)>
+                , <&rgb_ug RGB_ON>
+                , <&bootloader>
+                ;
+        };
+    }
+
+    combos {
+        compatible = "zmk,combos";
+// ------------------------- LAYER COMBOS --------------------------------
+        combo_BOOT {
+            timeout-ms = <50>;
+            key-positions = <0 11>;
+            bindings = <&to_BOOT>;
+            layers = <_BTF>;
+        };
+
+        // combo_BTF {
+        //     timeout-ms = <50>;
+        //     key-positions = <LHO RHO>;
+        //     bindings = <&mo_BTF>;
+        // };
+
+        combo_NAVR {
+            timeout-ms = <50>;
+            key-positions = <RMI RMM RMR>;
+            bindings = <&to_NAV>;
+            layers = <_BASE>;
+        };
+
+        combo_BASER {
+            timeout-ms = <50>;
+            key-positions = <RMI RMM RMR>;
+            bindings = <&to_BASE>;
+            layers = <_NAV>;
+        };
+
+        combo_NAVL {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM LMR>;
+            bindings = <&to_NAV>;
+            layers = <_BASE>;
+        };
+
+        combo_BASEL {
+            timeout-ms = <50>;
+            key-positions = <LMI LMM LMR>;
+            bindings = <&to_BASE>;
+            layers = <_NAV>;
+        };
+
+// ------------------------- MODS COMBOS --------------------------------
+        combo_CAPS {
+            timeout-ms = <50>;
+            key-positions = <LMI RMI>;
+            bindings = <&caps_word>;
+            require-prior-idle-ms = <200>;
+            layers = <_BASE>;
+        };
+    }
+
+    behaviors {
+// ------------------------- TAP-DANCES --------------------------------
+        cp_c: cp_c {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(C)>, <&kp LG(C)>;
+        };
+
+        cp_v: cp_v {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(V)>, <&kp LG(V)>;
+        };
+
+        cp_x: cp_x {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(X)>, <&kp LG(X)>;
+        };
+
+// ------------------------- HOLD-TAPS --------------------------------
+        /* left-hand HRMs */
+        hml: hrm_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <250>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        /* right-hand HRMs */
+        hmr: hrm_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <250>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        hsl: hrs_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        hsr: hrs_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        bst: backspace-tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            //require-prior-idle-ms = <100>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        spt: space-tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
+            //require-prior-idle-ms = <100>;
+            bindings = <&mo>, <&kp>;
+        };
+    }
+
+    keymap {
+        compatible = "zmk,keymap";
+
+                base_layer {
+// ----------------------------------------------------------------------------------
+// | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
+// |  [  |  P  |  L  |  M  |  H  |  F  |        |  W  |  C  |  O  |  U  |  Y  |  ]  |
+// | TAB |  N  |  R  |  T  |  D  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// |  <  | `~  |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  Q  |  X  | UP  |  >  |
+// |_BTF | cpX | cpC | cpV |_SYM(BSPC) |        | _NAV(SPC) | APP | LEFT| DOWN| RGHT|
+                        bindings = <
+   &kp ESC  &kp N1       &kp N2       &kp N3      &kp N4       &kp N5      &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
+   &kp LBKT &kp P        &kp L        &kp M       &kp H        &kp F       &kp W    &kp C        &kp O       &kp U        &kp Y       &kp RBKT
+   &kp TAB  &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B       &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp LT   &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL   &kp PLUS &kp Z        &kp Q       &kp X        &kp UP      &kp GT
+   &mo_BTF  &cp_x        &cp_c        &cp_v            &bst _SYM BSPC          &spt _NAV SPACE   &kp K_APP   &kp LEFT     &kp DOWN    &kp RIGHT
+                        >;
+                };
+
+                nav_layer {
+// ---------------------------------------------------------------------------------
+// |     |     |     |     |     |     |    |     |      |      |      |     |     |
+// |     | . , |  4  |  5  |  6  | INS |    | pUP | HOME |  UP  | END  | ESC |     |
+// |     |  0  |  1  |  2  |  3  | PSC |    | pDN | LEFT | SPC  | RGHT | RET |     |
+// |     |     |  7  |  8  |  9  |     |    |     | TAB  | DOWN | DEL  |     |     |
+// |     |     |     |     |_SYM(BSPC) |    |    SHFT    |      |      |     |     |
+                        bindings = <
+   &none   &none         &none         &none        &none         &none           &none        &none           &none           &none            &none         &none
+   &none   &kp KP_DOT    &kp N4        &kp N5       &kp N6        &kp INS         &kp PG_UP    &kp HOME        &kp UP          &kp END          &kp ESC       &none
+   &none   &hml LALT N0  &hml LCTRL N1 &hml LGUI N2 &hsl LSHFT N3 &kp PSCRN       &kp PG_DN    &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
+   &none   &none         &kp N7        &kp N8       &kp N9        &none           &none        &kp TAB         &kp DOWN        &kp DEL          &none         &none
+   &none   &none         &none         &none             &bst _SYM BSPC                &kp LSHFT               &none           &none            &none         &none
+                        >;
+                };
+                
+                sym_layer {
+// ------------------------------------------------------------------------------
+// |     |     |     |     |     |     |    |     |     |     |     |     |     |
+// |     |  \  |  |  |  _  |  =  |  {  |    |  }  |  "  |  ;  |  :  |  !  |     |
+// |     |  /  |  *  |  -  |  +  |  (  |    |  )  |  '  |  ,  |  .  |  ?  |     |
+// |     |  `  |  &  |  ^  |  %  |  [  |    |  ]  |  @  |  #  |  $  |  ~  |     |
+// |     |     |     |     |   BSPC    |    | _NAV(SPC) |     |     |     |     |
+                        bindings = <
+   &none   &none           &none           &none           &none           &none         &none    &none          &none           &none          &none           &none
+   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp LBRC      &kp RBRC &kp DQT        &kp SEMI        &kp COLON      &kp EXCL        &none
+   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp LPAR      &kp RPAR &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK &none
+   &none   &kp GRAVE       &kp AMPS        &kp CARET       &kp PRCNT       &kp LBKT      &kp RBKT &kp AT         &kp HASH        &kp DLLR       &kp TILDE       &none
+   &none   &none           &none           &none                   &kp BSPC                  &spt _NAV SPACE     &none           &none          &none           &none
+                        >;
+                };
+                
+                btf_layer {
+// ------------------------------------------------------------------------------
+// |     | BT1 | BT2 | BT3 | BT4 | BT5 |    |     |     |     |     |     |     |
+// |     | F1  | F2  | F3  | F4  |     |    |     |     |     |     |     |     |
+// |     | F5  | F6  | F7  | F8  |     |    |     | SFT | GUI | CTL | ALT |     |
+// |     | F9  | F10 | F11 | F12 |     |    |     |     |     |     |     |     |
+// |     |     |     |     |   BT_CLR  |    |           |     |     |     |     |
+                        bindings = <
+   &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none  &none      &none     &none      &none     &none
+   &none   &kp F1       &kp F2       &kp F3       &kp F4       &none             &none  &none      &none     &none      &none     &none
+   &none   &kp F5       &kp F6       &kp F7       &kp F8       &none             &none  &kp LSHFT  &kp LGUI  &kp LCTRL  &kp LALT  &none
+   &none   &kp F9       &kp F10      &kp F11      &kp F12      &none             &none  &none      &none     &none      &none     &none
+   &none   &none        &none        &none                 &bt BT_CLR               &none          &none     &none      &none     &none
+                        >;
+                };                
+    };
+};

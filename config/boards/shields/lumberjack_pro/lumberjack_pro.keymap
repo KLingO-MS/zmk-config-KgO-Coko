@@ -71,7 +71,7 @@
                 , <&bootloader>
                 ;
         };
-    }
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -125,7 +125,7 @@
             require-prior-idle-ms = <200>;
             layers = <_BASE>;
         };
-    }
+    };
 
     behaviors {
 // ------------------------- ENCODER -----------------------------------
@@ -227,7 +227,7 @@
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
-    }
+    };
 
     keymap {
         compatible = "zmk,keymap";

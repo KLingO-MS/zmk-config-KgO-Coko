@@ -17,10 +17,10 @@
 #define _SYM     2
 #define _BTF     3
 
-#define RGB_BASE RGB_COLOR_HSB(30,100,10)
-#define RGB_SYM RGB_COLOR_HSB(20,100,10)
-#define RGB_NAV RGB_COLOR_HSB(0,100,10)
-#define RGB_BTF RGB_COLOR_HSB(220,100,10)
+#define RGB_BASE RGB_COLOR_HSB(25,100,20)
+#define RGB_SYM RGB_COLOR_HSB(20,100,20)
+#define RGB_NAV RGB_COLOR_HSB(100,100,20)
+#define RGB_BTF RGB_COLOR_HSB(220,100,30)
 
 / {
 
@@ -66,7 +66,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&rgb_ug RGB_COLOR_HSB(0,100,50)>
+                = <&rgb_ug RGB_COLOR_HSB(0,100,100)>
                 , <&rgb_ug RGB_ON>
                 , <&bootloader>
                 ;
@@ -80,7 +80,6 @@
             timeout-ms = <50>;
             key-positions = <0 11>;
             bindings = <&to_BOOT>;
-            layers = <_BTF>;
         };
 
         // combo_BTF {

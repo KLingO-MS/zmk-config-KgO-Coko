@@ -234,16 +234,16 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// |  [  |  P  |  L  |  M  |  H  |  F  |        |  W  |  C  |  O  |  U  |  Y  |  ]  |
-// | TAB |  N  |  R  |  T  |  D  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// |  [  |  P  |  M  |  C  |  H  |  F  |        |  W  |  L  |  O  |  U  |  Y  |  ]  |
+// | TAB |  N  |  T  |  S  |  D  |  B  |        |  G  |  R  |  A  |  E  |  I  | RET |
 // |  <  | `~  |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  Q  |  X  | UP  |  >  |
-// |_BTF | cpX | cpC | cpV |_SYM(BSPC) |        | _NAV(SPC) | APP | LEFT| DOWN| RGHT|
+// | APP | cpX | cpC | cpV |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
-   &kp ESC  &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &kp LBKT &kp P        &kp L        &kp M       &kp H        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp RBKT
-   &kp TAB  &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp LT   &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp Q       &kp X        &kp UP      &kp GT
-   &mo_BTF  &cp_x        &cp_c        &cp_v            &bst _SYM BSPC                     &spt _NAV SPACE   &kp K_APP   &kp LEFT     &kp DOWN    &kp RIGHT
+   &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
+   &kp LBKT   &kp P        &kp M        &kp C       &kp H        &kp F                  &kp W    &kp L        &kp O       &kp U        &kp Y       &kp RBKT
+   &kp TAB    &hml LALT N  &hml LCTRL T &hml LGUI S &hsl LSHFT D &kp B                  &kp G    &hsr LSHFT R &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp LT     &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp Q       &kp X        &kp UP      &kp GT
+   &kp K_APP  &cp_x        &cp_c        &cp_v            &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -293,7 +293,7 @@
    &none   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &none  &none      &none     &none      &none     &none
    &none   &kp F1       &kp F2       &kp F3       &kp F4       &none                &none  &none      &none     &none      &none     &none
    &none   &kp F5       &kp F6       &kp F7       &kp F8       &none                &none  &kp LSHFT  &kp LGUI  &kp LCTRL  &kp LALT  &none
-   &none   &kp F9       &kp F10      &kp F11      &kp F12      &none    &kp C_MUTE  &none  &none      &none     &none      &none     &none
+   &none   &kp F9       &kp F10      &kp F11      &kp F12      &none    &to_BOOT    &none  &none      &none     &none      &none     &none
    &none   &none        &none        &none                 &bt BT_CLR                  &none          &none     &none      &none     &none
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;

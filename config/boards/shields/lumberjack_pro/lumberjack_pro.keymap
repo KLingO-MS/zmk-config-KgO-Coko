@@ -250,7 +250,7 @@
    &kp LBKT   &kp P        &kp M        &kp C       &kp H        &kp F                  &kp W    &kp L        &kp O       &kp U        &kp Y       &kp RBKT
    &kp TAB    &hml LALT N  &hml LCTRL T &hml LGUI S &hsl LSHFT D &kp B                  &kp G    &hsr LSHFT R &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp LT     &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp Q       &kp X        &kp UP      &kp GT
-   &kp K_APP  &cp_x        &cp_c        &cp_v            &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
+   &app_lock  &cp_x        &cp_c        &cp_v            &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };

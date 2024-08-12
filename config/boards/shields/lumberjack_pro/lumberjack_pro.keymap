@@ -149,28 +149,28 @@
 
         combo_NAVR {
             timeout-ms = <50>;
-            key-positions = <RMI RMM RMR>;
+            key-positions = <RMP RHI>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASER {
             timeout-ms = <50>;
-            key-positions = <RMI RMM RMR>;
+            key-positions = <RMP RHI>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };
 
         combo_NAVL {
             timeout-ms = <50>;
-            key-positions = <LMI LMM LMR>;
+            key-positions = <LMP LHI>;
             bindings = <&to_NAV>;
             layers = <_BASE>;
         };
 
         combo_BASEL {
             timeout-ms = <50>;
-            key-positions = <LMI LMM LMR>;
+            key-positions = <LMP LHI>;
             bindings = <&to_BASE>;
             layers = <_NAV>;
         };

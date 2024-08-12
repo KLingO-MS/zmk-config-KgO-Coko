@@ -39,15 +39,17 @@
 #define LBR 38
 #define LBP 37
 
-#define RBC 42  // right-bottom row
-#define RBI 43
-#define RBM 44
-#define RBR 45
-#define RBP 46
+// 42 is encoder push-button
 
-#define LHI 52  // left thumb keys
+#define RBC 43  // right-bottom row
+#define RBI 44
+#define RBM 45
+#define RBR 46
+#define RBP 47
 
-#define RHI 53  // right thumb keys
+#define LHI 53  // left thumb keys
+
+#define RHI 54  // right thumb keys
 
 #define KEYS_L LTC LTI LTM LTR LTP LMC LMI LMM LMR LMP LBC LBI LBM LBR LBP  // left-hand keys
 #define KEYS_R RTC RTI RTM RTR RTP RMC RMI RMM RMR RMP RBC RBI RBM RBR RBP  // right-hand keys

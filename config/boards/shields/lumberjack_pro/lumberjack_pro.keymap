@@ -19,7 +19,7 @@
 
 #define RGB_BASE RGB_COLOR_HSB(20,100,30)
 #define RGB_SYM RGB_COLOR_HSB(20,100,30)
-#define RGB_NAV RGB_COLOR_HSB(10,100,30)
+#define RGB_NAV RGB_COLOR_HSB(40,80,30)
 #define RGB_BTF RGB_COLOR_HSB(200,100,40)
 
 / {
@@ -412,14 +412,14 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// |  [  |  P  |  C  |  M  |  L  |  W  |        |  F  |  H  |  O  |  U  |  Y  |  ]  |
-// | TAB |  N  |  S  |  T  |  R  |  J  |        |  G  |  D  |  A  |  E  |  I  | RET |
+// |  [  |  P  |  C  |  M  |  L  |  W  |        |  F  |  D  |  O  |  U  |  Y  |  ]  |
+// | TAB |  N  |  S  |  T  |  R  |  J  |        |  G  |  H  |  A  |  E  |  I  | RET |
 // |  <  | `~  |  B  |  V  |  Z  |  =  |  MUTE  |  +  |  K  |  X  |  Q  | UP  |  >  |
 // | cpV | cpC | cpX |_BTF |_SYM(BSPC) |        | _NAV(SPC) | APP | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &kp LBKT   &kp P        &kp C        &kp M       &kp L        &kp W                  &kp F    &kp H        &kp O       &kp U        &kp Y       &kp RBKT
-   &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp G    &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp LBKT   &kp P        &kp C        &kp M       &kp L        &kp W                  &kp F    &kp D        &kp O       &kp U        &kp Y       &kp RBKT
+   &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp G    &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp LT     &kp GRAVE    &kp B        &kp V       &kp Z        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp K        &kp X       &kp Q        &kp UP      &kp GT
    &cp_v      &cp_c        &cp_x        &btf_nav 0 0     &bst _SYM BSPC                     &spt _NAV SPACE   &app_lock    &kp LEFT     &kp DOWN    &kp RIGHT
                         >;

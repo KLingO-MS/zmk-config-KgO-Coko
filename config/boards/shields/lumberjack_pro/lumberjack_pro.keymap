@@ -309,13 +309,6 @@
             bindings = <&kp K_APP>, <&kp LG(L)>, <&kp LC(LA(DEL))>;
         };
 
-        btf_nav: btf_nav {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mo_BTF>, <&to_NAV>;
-        };
-
 // ------------------------- HOLD-TAPS --------------------------------
         /* left-hand HRMs */
         hml: hrm_left {
@@ -387,6 +380,16 @@
             bindings = <&mo>, <&kp>;
         };
 
+        btf_nav: BTF-NAV-lock {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <0>;
+            //require-prior-idle-ms = <100>;
+            bindings = <&mo_BTF>, <&to_NAV>;
+        };
+
 // ------------------------- MOD-MORPHS --------------------------------
         mm_you: mm_you {
             compatible = "zmk,behavior-mod-morph";
@@ -418,7 +421,7 @@
    &kp LBKT   &kp P        &kp C        &kp M       &kp L        &kp W                  &kp F    &kp H        &kp O       &kp U        &kp Y       &kp RBKT
    &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp G    &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp LT     &kp GRAVE    &kp B        &kp V       &kp Z        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp K        &kp X       &kp Q        &kp UP      &kp GT
-   &cp_v      &cp_c        &cp_x        &btf_nav            &bst _SYM BSPC                     &spt _NAV SPACE   &app_lock    &kp LEFT     &kp DOWN    &kp RIGHT
+   &cp_v      &cp_c        &cp_x        &btf_nav 0 0     &bst _SYM BSPC                     &spt _NAV SPACE   &app_lock    &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };

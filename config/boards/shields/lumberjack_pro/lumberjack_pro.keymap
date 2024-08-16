@@ -413,14 +413,14 @@
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
 // |  [  |  P  |  C  |  M  |  L  |  W  |        |  F  |  H  |  O  |  U  |  Y  |  ]  |
-// | TAB |  N  |  S  |  T  |  R  |  J  |        |  G  |  D  |  A  |  E  |  I  | RET |
-// |  <  | `~  |  B  |  V  |  Z  |  =  |  MUTE  |  +  |  K  |  X  |  Q  | UP  |  >  |
+// | TAB |  N  |  S  |  T  |  R  |  J  |        |  B  |  D  |  A  |  E  |  I  | RET |
+// |  <  | `~  |  G  |  V  |  Z  |  =  |  MUTE  |  +  |  K  |  X  |  Q  | UP  |  >  |
 // | cpV | cpC | cpX |_BTF |_SYM(BSPC) |        | _NAV(SPC) | APP | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
    &kp LBKT   &kp P        &kp C        &kp M       &kp L        &kp W                  &kp F    &kp H        &kp O       &kp U        &kp Y       &kp RBKT
-   &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp G    &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp LT     &kp GRAVE    &kp B        &kp V       &kp Z        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp K        &kp X       &kp Q        &kp UP      &kp GT
+   &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp B    &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp LT     &kp GRAVE    &kp G        &kp V       &kp Z        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp K        &kp X       &kp Q        &kp UP      &kp GT
    &cp_v      &cp_c        &cp_x        &btf_nav 0 0     &bst _SYM BSPC                     &spt _NAV SPACE   &app_lock    &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;

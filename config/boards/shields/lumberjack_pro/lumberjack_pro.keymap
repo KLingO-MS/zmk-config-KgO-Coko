@@ -466,16 +466,16 @@
                 nav_layer {
 // -------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |        |     |      |      |      |     |     |
-// |     |  5  |  6  |  7  |  8  | INS |        | ESC | HOME |  UP  | END  | DEL |     |
-// |     |  1  |  2  |  3  |  4  | PSC |        | TAB | LEFT | SPC  | RGHT | RET |     |
-// |     |     | . , |  9  |  0  |     |  MUTE  |     | PGUP | DOWN | PGDN |     |     |
+// |     |  5  |  6  |  7  |  8  | INS |        | pUP | HOME |  UP  | END  | ESC |     |
+// |     |  1  |  2  |  3  |  4  | PSC |        | pDN | LEFT | SPC  | RGHT | RET |     |
+// |     |     | . , |  9  |  0  |     |  MUTE  |     | TAB  | DOWN | DEL  |     |     |
 // |     |     |     |_BASE|_SYM(BSPC) |        |    SHFT    |_BASE |      |     |     |
                         bindings = <
-   &none   &none        &none         &none        &none         &none                &none    &none           &none           &none            &none         &none
-   &none   &kp N5       &kp N6        &kp N7       &kp N8        &kp INS              &kp ESC  &kp HOME        &kp UP          &kp END          &kp DEL       &none
-   &none   &hml LALT N1 &hml LCTRL N2 &hml LGUI N3 &hsl LSHFT N4 &kp PSCRN            &kp TAB  &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
-   &none   &none        &kp KP_DOT    &kp N9       &kp N0        &none     &kp C_MUTE &none    &kp PG_UP       &kp DOWN        &kp PG_DN        &none         &none
-   &none   &none        &none         &to_BASE          &bst _SYM BSPC                     &kp LSHFT           &to_BASE        &none            &none         &none
+   &none   &none        &none         &none        &none         &none                &none     &none           &none           &none            &none         &none
+   &none   &kp N5       &kp N6        &kp N7       &kp N8        &kp INS              &kp PG_UP &kp HOME        &kp UP          &kp END          &kp ESC       &none
+   &none   &hml LALT N1 &hml LCTRL N2 &hml LGUI N3 &hsl LSHFT N4 &kp PSCRN            &kp PG_DN &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
+   &none   &none        &kp KP_DOT    &kp N9       &kp N0        &none     &kp C_MUTE &none     &kp TAB         &kp DOWN        &kp DEL          &none         &none
+   &none   &none        &none         &to_BASE          &bst _SYM BSPC                      &kp LSHFT           &to_BASE        &none            &none         &none
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -483,33 +483,33 @@
                 sym_layer {
 // --------------------------------------------------------------------------------
 // |     |     |     |     |     |     |      |     |     |     |     |     |     |
-// |     |  \  |  |  |  _  |  =  |  \  |      |  ~  |  ;  |  :  |  "  |  !  |     |
-// |     |  /  |  *  |  -  |  +  |  §  |      |  `  |  ,  |  .  |  '  |  ?  |     |
+// |     |  \  |  |  |  _  |  =  |  \  |      |  ~  |  "  |  ;  |  :  |  !  |     |
+// |     |  /  |  *  |  -  |  +  |  §  |      |  `  |  '  |  ,  |  .  |  ?  |     |
 // |     |     |  &  |  ^  |  %  |     | MUTE |     |  @  |  #  |  $  |     |     |
 // |     |     |     |     |   BSPC    |      | _NAV(SPC) |     |     |     |     |
                         bindings = <
-   &none   &none           &none           &none           &none           &none               &none     &none            &none         &none          &none           &none
-   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp TILDE &kp SEMI         &kp COLON     &kp DQT        &kp EXCL        &none
-   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp GRAVE &hsr LSHFT COMMA &hmr LGUI DOT &hmr LCTRL SQT &hmr LALT QMARK &none
-   &none   &none           &kp AMPS        &kp CARET       &kp PRCNT       &none    &kp C_MUTE &none     &kp AT           &kp HASH      &kp DLLR       &none           &none
-   &none   &none           &none           &none                   &kp BSPC                         &spt _NAV SPACE       &none         &none          &none           &none
+   &none   &none           &none           &none           &none           &none               &none     &none          &none           &none          &none           &none
+   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL        &none
+   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK &none
+   &none   &none           &kp AMPS        &kp CARET       &kp PRCNT       &none    &kp C_MUTE &none     &kp AT         &kp HASH        &kp DLLR       &none           &none
+   &none   &none           &none           &none                   &kp BSPC                         &spt _NAV SPACE     &none           &none          &none           &none
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
                 
                 btf_layer {
 // --------------------------------------------------------------------------------
-// | CLR | BT1 | BT2 | BT3 | BT4 | BT5 |      |     |     |     |     |     | RES |
+// | CLR | BT1 | BT2 | BT3 | BT4 | BT5 |      |     |     |     |     |     | CLS |
 // |     |  [  |  ]  |  {  |  }  |     |      |     | F1  | F2  | F3  | F4  |     |
 // |     | ALT | CTL | GUI | SFT |     |      |     | F5  | F6  | F7  | F8  |     |
 // |     |  <  |  >  |  (  |  )  |     | BOOT |     | F9  | F10 | F11 | F12 |     |
-// |     |     |     | APP |   BSPC    |      |  LOCK SCR | APP |     |     |     |
+// |     |     |     | APP |   RESET   |      |  LOCK SCR | APP |     |     |     |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LC(LA(DEL))
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LA(F4)
    &none      &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &none                &none  &kp F1  &kp F2    &kp F3   &kp F4   &none                
    &none      &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &none                &none  &kp F5  &kp F6    &kp F7   &kp F8   &none                
    &none      &kp LT       &kp GT       &kp LPAR     &kp RPAR     &none    &to_BOOT    &none  &kp F9  &kp F10   &kp F11  &kp F12  &none    
-   &none      &none        &none        &kp K_APP           &kp BSPC                     &kp LG(L)    &kp K_APP &none    &none    &none
+   &none      &none        &none        &kp K_APP       &kp LC(LA(DEL))                  &kp LG(L)    &kp K_APP &none    &none    &none
                         >;
                         sensor-bindings = <&rot_kp C_BRI_INC C_BRI_DEC>;
                 };                

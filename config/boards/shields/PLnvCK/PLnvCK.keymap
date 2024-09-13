@@ -422,14 +422,14 @@
                 base_layer {
                     display-name = "Alpha";
 // -------------------------------            -------------------------------
-// |  P  |  C  |  M  |  L  |  W  |            |  F  |  D  |  O  |  U  |  Y  |
+// |  P  |  Z  |  M  |  L  |  W  |            |  F  |  D  |  O  |  U  |  Y  |
 // |  N  |  S  |  T  |  R  |  J  |            |  B  |  H  |  A  |  E  |  I  |
-// | wCP |  G  |  V  |  Z  |  <  |            |  >  |  K  |  X  |  Q  | mCP |
+// | wCP |  G  |  V  |  C  |  <  |            |  >  |  K  |  X  |  Q  | mCP |
 // | Alt | Ctl | Gui | _SYM(BSPC) |  =  |  +  | _NAV(SPC) | Gui | Ctl | Alt |
                         bindings = <
-   &kp P        &kp C        &kp M       &kp L        &kp W           &kp F     &kp D        &kp O       &kp U        &kp Y
+   &kp P        &kp Z        &kp M       &kp L        &kp W           &kp F     &kp D        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B     &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-   &win_cp      &kp G        &kp V       &kp Z        &kp LT          &kp GT    &kp K        &kp X       &kp Q        &mac_cp
+   &win_cp      &kp G        &kp V       &kp C        &kp LT          &kp GT    &kp K        &kp X       &kp Q        &mac_cp
    &kp LALT     &kp LCTRL    &kp LGUI    &bst _SYM BSPC &kp EQUAL   &kp PLUS &spt _NAV SPACE &kp LGUI    &kp LCTRL    &kp LALT
                         >;
                 };

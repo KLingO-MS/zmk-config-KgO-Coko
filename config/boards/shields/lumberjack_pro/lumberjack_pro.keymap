@@ -449,15 +449,15 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// | HOM |  P  |  C  |  M  |  L  |  W  |        |  F  |  H  |  O  |  U  |  Y  | pUP |
-// | TAB |  N  |  S  |  T  |  R  |  J  |        |  B  |  D  |  A  |  E  |  I  | RET |
-// | END | ` ~ |  G  |  V  |  Z  |  =  |  MUTE  |  +  |  K  |  X  |  Q  | UP  | pDN |
+// | HOM |  P  |  L  |  M  |  D  |  F  |        |  W  |  C  |  O  |  U  |  Y  | pUP |
+// | TAB |  N  |  R  |  T  |  H  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// | END | ` ~ |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | pDN |
 // | cpV | cpC | cpX |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &kp HOME   &kp P        &kp C        &kp M       &kp L        &kp W                  &kp F    &kp H        &kp O       &kp U        &kp Y       &kp PG_UP
-   &kp TAB    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J                  &kp B    &hsr LSHFT D &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp END    &kp GRAVE    &kp G        &kp V       &kp Z        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp K        &kp X       &kp Q        &kp UP      &kp PG_DN
+   &kp HOME   &kp P        &kp L        &kp M       &kp D        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp PG_UP
+   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp END    &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp PG_DN
    &cp_v      &cp_c        &cp_x        &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;

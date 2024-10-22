@@ -401,8 +401,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <130>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -411,8 +411,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <130>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <200>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };

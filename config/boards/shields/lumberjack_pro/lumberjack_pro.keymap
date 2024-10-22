@@ -211,7 +211,7 @@
         combo_LPAR {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LTI LTM>;
+            key-positions = <LMM LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
         };
@@ -219,7 +219,7 @@
         combo_RPAR {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RTI RTM>;
+            key-positions = <RMI RMM>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
         };
@@ -227,7 +227,7 @@
         combo_LBRC {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LBM LBI>;
+            key-positions = <LTM LTI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
         };
@@ -235,7 +235,7 @@
         combo_RBRC {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RBI RBM>;
+            key-positions = <RTI RTM>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
         };
@@ -243,7 +243,7 @@
         combo_LBKT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LTM LTR>;
+            key-positions = <LBM LBI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
         };
@@ -251,7 +251,7 @@
         combo_RBKT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RTM RTR>;
+            key-positions = <RBI RBM>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
         };
@@ -259,7 +259,7 @@
         combo_GT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RBM RBR>;
+            key-positions = <RMM RMR>;
             bindings = <&kp GT>;
             layers = <_BASE _SYM>;
         };
@@ -267,7 +267,7 @@
         combo_LT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LBM LBR>;
+            key-positions = <LMM LMR>;
             bindings = <&kp LT>;
             layers = <_BASE _SYM>;
         };
@@ -275,7 +275,6 @@
 // ------------------------- CHARACTER COMBOS --------------------------------
         combo_YOU {
             timeout-ms = <50>;
-            require-prior-idle-ms = <150>;
             key-positions = <RMI RMM RMR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
@@ -283,16 +282,14 @@
 
         combo_THE {
             timeout-ms = <50>;
-            require-prior-idle-ms = <150>;
             key-positions = <LMI LMM LMR>;
             bindings = <&mm_the>;
             layers = <_BASE>;
         };
 
         combo_QU {
-            timeout-ms = <45>;
-            require-prior-idle-ms = <150>;
-            key-positions = <RMI RMM>;
+            timeout-ms = <150>;
+            key-positions = <RBM RBR>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
@@ -404,8 +401,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <130>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -414,8 +411,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <130>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };

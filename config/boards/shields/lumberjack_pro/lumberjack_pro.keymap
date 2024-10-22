@@ -275,6 +275,7 @@
 // ------------------------- CHARACTER COMBOS --------------------------------
         combo_YOU {
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
             key-positions = <RMI RMM RMR>;
             bindings = <&mm_you>;
             layers = <_BASE>;
@@ -282,13 +283,15 @@
 
         combo_THE {
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
             key-positions = <LMI LMM LMR>;
             bindings = <&mm_the>;
             layers = <_BASE>;
         };
 
         combo_QU {
-            timeout-ms = <150>;
+            timeout-ms = <45>;
+            require-prior-idle-ms = <150>;
             key-positions = <RMI RMM>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;

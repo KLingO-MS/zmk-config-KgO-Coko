@@ -201,7 +201,7 @@
 // ------------------------- MODS COMBOS --------------------------------
         combo_CAPS {
             timeout-ms = <50>;
-            key-positions = <LTI RTI>;
+            key-positions = <LMI RMI>;
             bindings = <&caps_word>;
             require-prior-idle-ms = <250>;
             layers = <_BASE>;
@@ -449,14 +449,14 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// | pUP |  P  |  L  |  M  |  D  |  F  |        |  W  |  C  |  O  |  U  |  Y  | HOM |
-// | TAB |  N  |  R  |  T  |  H  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// | pUP |  P  |  L  |  M  |  H  |  F  |        |  W  |  C  |  O  |  U  |  Y  | HOM |
+// | TAB |  N  |  R  |  T  |  D  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
 // | pDN | ` ~ |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | END |
 // | cpV | cpC | cpX |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &kp PG_UP  &kp P        &kp L        &kp M       &kp D        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp HOME
-   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp PG_UP  &kp P        &kp L        &kp M       &kp H        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp HOME
+   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_DN  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp END
    &cp_v      &cp_c        &cp_x        &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;

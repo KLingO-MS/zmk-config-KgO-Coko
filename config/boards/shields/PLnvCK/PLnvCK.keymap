@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "keypos_40keys.h"
 
 #define _BASE    0
@@ -23,53 +24,53 @@
 / {
 // ------------------------- MACROS --------------------------------
     macros {
-        muc_you: macro_uc_you {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp LS(Y)>
-                , <&kp O>
-                , <&kp U>
-                ;
-        };
+        // muc_you: macro_uc_you {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp LS(Y)>
+        //         , <&kp O>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        mlc_you: macro_lc_you {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp Y>
-                , <&kp O>
-                , <&kp U>
-                ;
-        };
+        // mlc_you: macro_lc_you {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp Y>
+        //         , <&kp O>
+        //         , <&kp U>
+        //         ;
+        // };
 
-        muc_the: macro_uc_the {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp LS(T)>
-                , <&kp H>
-                , <&kp E>
-                ;
-        };
+        // muc_the: macro_uc_the {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp LS(T)>
+        //         , <&kp H>
+        //         , <&kp E>
+        //         ;
+        // };
 
-        mlc_the: macro_lc_the {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp T>
-                , <&kp H>
-                , <&kp E>
-                ;
-        };
+        // mlc_the: macro_lc_the {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp T>
+        //         , <&kp H>
+        //         , <&kp E>
+        //         ;
+        // };
 
         // mlc_are: macro_lc_are {
         //     compatible = "zmk,behavior-macro";
@@ -107,17 +108,17 @@
         //         ;
         // };
 
-        mlc_ing: macro_lc_ing {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <5>;
-            bindings
-                = <&kp I>
-                , <&kp N>
-                , <&kp G>
-                ;
-        };
+        // mlc_ing: macro_lc_ing {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     wait-ms = <0>;
+        //     tap-ms = <5>;
+        //     bindings
+        //         = <&kp I>
+        //         , <&kp N>
+        //         , <&kp G>
+        //         ;
+        // };
     };
 
     combos {
@@ -141,7 +142,7 @@
         combo_NAVR {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <RM4 RM0>;
+            key-positions = <RM1 RM2 RM3>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -149,7 +150,7 @@
         combo_NAVL {
             timeout-ms = <50>;
             require-prior-idle-ms = <300>;
-            key-positions = <LM4 LM0>;
+            key-positions = <LM1 LM2 LM3>;
             bindings = <&tog _NAV>;
             layers = <_BASE _SYM _NAV>;
         };
@@ -194,29 +195,29 @@
         //     layers = <_BASE>;
         // };
 
-        combo_ING {
-            timeout-ms = <50>;
-            key-positions = <RM1 RM2 RM3>;
-            bindings = <&mlc_ing>;
-            layers = <_BASE>;
-        };
+        // combo_ING {
+        //     timeout-ms = <50>;
+        //     key-positions = <RM1 RM2 RM3>;
+        //     bindings = <&mlc_ing>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_YOU {
-            timeout-ms = <50>;
-            key-positions = <RT1 RT2 RT3>;
-            bindings = <&mm_you>;
-            layers = <_BASE>;
-        };
+        // combo_YOU {
+        //     timeout-ms = <50>;
+        //     key-positions = <RT1 RT2 RT3>;
+        //     bindings = <&mm_you>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_THE {
-            timeout-ms = <50>;
-            key-positions = <LM1 LM2 LM3>;
-            bindings = <&mm_the>;
-            layers = <_BASE>;
-        };
+        // combo_THE {
+        //     timeout-ms = <50>;
+        //     key-positions = <LM1 LM2 LM3>;
+        //     bindings = <&mm_the>;
+        //     layers = <_BASE>;
+        // };
 
         combo_QU {
-            timeout-ms = <50>;
+            timeout-ms = <150>;
             key-positions = <RB2 RB3>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
@@ -291,18 +292,25 @@
 
     behaviors {
 // ------------------------- TAP-DANCES --------------------------------
-        win_cp: win_cp {
+        cp_c: cp_c {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&kp LC(C)>, <&kp LC(V)>, <&kp LC(X)>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(C)>, <&kp LG(C)>;
         };
 
-        mac_cp: mac_cp {
+        cp_v: cp_v {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <500>;
-            bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(X)>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(V)>, <&kp LG(V)>;
+        };
+
+        cp_x: cp_x {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&kp LC(X)>, <&kp LG(X)>;
         };
 
 // ------------------------- HOLD-TAPS --------------------------------
@@ -360,8 +368,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -371,7 +379,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <300>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -400,19 +408,19 @@
         //     mods = <(MOD_LSFT)>;
         // };
 
-        mm_you: mm_you {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_you>, <&muc_you>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_you: mm_you {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_you>, <&muc_you>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
-        mm_the: mm_the {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&mlc_the>, <&muc_the>;
-            mods = <(MOD_LSFT)>;
-        };
+        // mm_the: mm_the {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     #binding-cells = <0>;
+        //     bindings = <&mlc_the>, <&muc_the>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
     };
 
@@ -429,7 +437,7 @@
                         bindings = <
    &kp P        &kp Z        &kp M       &kp L        &kp W           &kp F     &kp D        &kp O       &kp U        &kp Y
    &hml LALT N  &hml LCTRL S &hml LGUI T &hsl LSHFT R &kp J           &kp B     &hsr LSHFT H &hmr LGUI A &hmr LCTRL E &hmr LALT I 
-   &win_cp      &kp G        &kp V       &kp C        &kp LT          &kp GT    &kp K        &kp X       &kp Q        &mac_cp
+   &none        &kp G        &kp V       &kp C        &kp LT          &kp GT    &kp K        &kp X       &kp Q        &none
    &kp LALT     &kp LCTRL    &kp LGUI    &bst _SYM BSPC &kp EQUAL   &kp PLUS &spt _NAV SPACE &kp LGUI    &kp LCTRL    &kp LALT
                         >;
                 };
@@ -477,6 +485,15 @@
    &bt BT_CLR   &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP &none           &none  &kp F9  &kp F10 &kp F11 &kp F12
    &none        &none        &none        &to _BASE    &none           &none  &to _BASE  &none   &none   &none
                         >;
-                };                
+                };   
+
+                extra1 {
+                        status = "reserved";
+                };
+
+                extra2 {
+                        status = "reserved";
+                };
+             
     };
 };

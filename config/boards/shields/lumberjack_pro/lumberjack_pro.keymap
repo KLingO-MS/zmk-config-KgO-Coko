@@ -89,29 +89,16 @@
                 ;
         };
 
-        // muc_you: macro_uc_you {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp LS(Y)>
-        //         , <&kp O>
-        //         , <&kp U>
-        //         ;
-        // };
-
-        // mlc_you: macro_lc_you {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp Y>
-        //         , <&kp O>
-        //         , <&kp U>
-        //         ;
-        // };
+        mlc_ou: macro_lc_ou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings
+                = <&kp O>
+                , <&kp U>
+                ;
+        };
 
         // muc_the: macro_uc_the {
         //     compatible = "zmk,behavior-macro";
@@ -290,12 +277,12 @@
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        // combo_YOU {
-        //     timeout-ms = <50>;
-        //     key-positions = <RMI RMM RMR>;
-        //     bindings = <&mm_you>;
-        //     layers = <_BASE>;
-        // };
+        combo_YOU {
+            timeout-ms = <120>;
+            key-positions = <RTM RTR>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
 
         // combo_THE {
         //     timeout-ms = <50>;
@@ -467,14 +454,14 @@
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
 // | pUP |  P  |  L  |  M  |  K  |  F  |        |  W  |  C  |  O  |  U  |  Y  | HOM |
-// | TAB |  N  |  R  |  T  |  D  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
-// | pDN | ` ~ |  J  |  V  |  H  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | END |
+// | TAB |  N  |  R  |  T  |  H  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// | pDN | ` ~ |  J  |  V  |  D  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | END |
 // | cpV | cpC | cpX |_MOUS|_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
    &kp PG_UP  &kp P        &kp L        &kp M       &kp K        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp HOME
-   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT D &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp PG_DN  &kp GRAVE    &kp J        &kp V       &kp H        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp END
+   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp PG_DN  &kp GRAVE    &kp J        &kp V       &kp D        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp END
    &cp_v      &cp_c        &cp_x        &mo_MOUS         &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;

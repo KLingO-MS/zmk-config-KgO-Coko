@@ -16,6 +16,9 @@ include:
   - board: nice_nano_v2
     shield: lumberjack_pro
     snippet: studio-rpc-usb-uart
+  - board: sparkfun_pro_micro_rp2040
+    shield: LJ_frood
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: Coko
     snippet: studio-rpc-usb-uart

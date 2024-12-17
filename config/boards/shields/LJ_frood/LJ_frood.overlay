@@ -11,7 +11,7 @@
 &pinctrl {
     pio0_spi0_default: pio0_spi0_default {
         group1 {
-            pinmux = <&gpio0 7>;
+            pinmux = <PIO0_P07>;
         };
     };
 };

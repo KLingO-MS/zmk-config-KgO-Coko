@@ -19,7 +19,7 @@
 #define _BTF     3
 #define _MOUS    4
 
-#define RGB_BASE RGB_COLOR_HSB(50,10,50)
+#define RGB_BASE RGB_COLOR_HSB(20,100,50)
 #define RGB_SYM RGB_COLOR_HSB(20,100,50)
 #define RGB_NAV RGB_COLOR_HSB(40,80,50)
 #define RGB_BTF RGB_COLOR_HSB(180,100,60)
@@ -277,7 +277,7 @@
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        combo_YOU {
+        combo_OU {
             timeout-ms = <120>;
             key-positions = <RTM RTR>;
             bindings = <&mlc_ou>;
@@ -462,7 +462,7 @@
    &kp PG_UP  &kp P        &kp L        &kp M       &kp K        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp HOME
    &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_DN  &kp GRAVE    &kp J        &kp V       &kp D        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp END
-   &cp_v      &cp_c        &cp_x        &mo_MOUS         &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
+   &cp_v      &cp_c        &cp_x        &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };

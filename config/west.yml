@@ -21,5 +21,7 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-adaptive-key
+      remote: urob
   self:
     path: config

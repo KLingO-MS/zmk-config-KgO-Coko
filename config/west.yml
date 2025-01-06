@@ -1,4 +1,6 @@
 manifest:
+  defaults:
+    revision: v0.1 # version to use for this module and for ZMK
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -19,7 +21,7 @@ manifest:
       # remote: zephyr35
       # revision: core/zephyr-3.5-update
       remote: zmkfirmware
-      revision: main
+#      revision: main
       import: app/west.yml
     - name: zmk-adaptive-key
       remote: urob

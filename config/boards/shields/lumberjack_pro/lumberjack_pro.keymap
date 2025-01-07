@@ -19,7 +19,7 @@
 #define _BTF     3
 #define _MOUS    4
 
-#define RGB_BASE RGB_COLOR_HSB(20,100,50)
+#define RGB_BASE RGB_COLOR_HSB(280,100,50)
 #define RGB_SYM RGB_COLOR_HSB(20,100,50)
 #define RGB_NAV RGB_COLOR_HSB(40,80,50)
 #define RGB_BTF RGB_COLOR_HSB(180,100,60)
@@ -213,49 +213,49 @@
 
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMM LMI>;
+            key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
             layers = <_BASE _SYM>;
         };
 
         combo_RPAR {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMI RMM>;
+            key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
             layers = <_BASE _SYM>;
         };
 
         combo_LBRC {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LTM LTI>;
+            key-positions = <LMM LHI>;
             bindings = <&kp LBRC>;
             layers = <_BASE _SYM>;
         };
 
         combo_RBRC {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RTI RTM>;
+            key-positions = <RMM RHI>;
             bindings = <&kp RBRC>;
             layers = <_BASE _SYM>;
         };
 
         combo_LBKT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <LBM LBI>;
+            key-positions = <LMR LHI>;
             bindings = <&kp LBKT>;
             layers = <_BASE _SYM>;
         };
 
         combo_RBKT {
-            timeout-ms = <45>;
+            timeout-ms = <50>;
             require-prior-idle-ms = <200>;
-            key-positions = <RBI RBM>;
+            key-positions = <RMR RHI>;
             bindings = <&kp RBKT>;
             layers = <_BASE _SYM>;
         };
@@ -263,7 +263,7 @@
         combo_GT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <RMM RMR>;
+            key-positions = <RMP RHI>;
             bindings = <&kp GT>;
             layers = <_BASE _SYM>;
         };
@@ -271,14 +271,14 @@
         combo_LT {
             timeout-ms = <45>;
             require-prior-idle-ms = <200>;
-            key-positions = <LMM LMR>;
+            key-positions = <LMP LHI>;
             bindings = <&kp LT>;
             layers = <_BASE _SYM>;
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
         combo_OU {
-            timeout-ms = <120>;
+            timeout-ms = <250>;
             key-positions = <RTM RTR>;
             bindings = <&mlc_ou>;
             layers = <_BASE>;
@@ -292,8 +292,8 @@
         // };
 
         combo_QU {
-            timeout-ms = <150>;
-            key-positions = <RBM RBR>;
+            timeout-ms = <250>;
+            key-positions = <RBM RBI>;
             bindings = <&mlc_qu>;
             layers = <_BASE>;
         };
@@ -377,6 +377,18 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
+        asl: aks_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <170>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <120>;
+            bindings = <&kp>, <&ak_d>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
         hsl: hrs_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -431,6 +443,21 @@
             bindings = <&mo_BTF>, <&to_NAV>;
         };
 
+// ----------------------- ADAPTIVE-KEYS ------------------------------- 
+        ak_d: ak_d {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp D>;
+
+            akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
+            akt_bh { trigger-keys = <B>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+        };
+
 // ------------------------- MOD-MORPHS --------------------------------
         // mm_you: mm_you {
         //     compatible = "zmk,behavior-mod-morph";
@@ -453,16 +480,16 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// | pUP |  P  |  L  |  M  |  K  |  F  |        |  W  |  C  |  O  |  U  |  Y  | HOM |
-// | TAB |  N  |  R  |  T  |  H  |  B  |        |  G  |  S  |  A  |  E  |  I  | RET |
-// | pDN | ` ~ |  J  |  V  |  D  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | END |
-// | cpV | cpC | cpX |_MOUS|_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
+// | cut |  P  |  L  |  M  |  B  |  F  |        |  W  |  C  |  O  |  U  |  Y  | cpy |
+// | TAB |  N  |  R  |  T  |  D  |  H  |        |  G  |  S  |  A  |  E  |  I  | RET |
+// | pUP | ` ~ |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | pst |
+// | pDN | HOM | END |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &kp PG_UP  &kp P        &kp L        &kp M       &kp K        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &kp HOME
-   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &hsl LSHFT H &kp B                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp PG_DN  &kp GRAVE    &kp J        &kp V       &kp D        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &kp END
-   &cp_v      &cp_c        &cp_x        &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
+   &cp_x      &kp P        &kp L        &kp M       &kp B        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &cp_c
+   &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
+   &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
+   &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };

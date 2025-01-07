@@ -277,12 +277,12 @@
         };
 
 // ------------------------- CHARACTER COMBOS --------------------------------
-        // combo_YOU {
-        //     timeout-ms = <120>;
-        //     key-positions = <RTM RTR>;
-        //     bindings = <&mlc_ou>;
-        //     layers = <_BASE>;
-        // };
+        combo_OU {
+            timeout-ms = <250>;
+            key-positions = <RTM RTR>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
 
         // combo_THE {
         //     timeout-ms = <50>;
@@ -458,13 +458,13 @@
             akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
 
-        ak_o: ak_o {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp O>;
-
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp BSPC &kp O &kp U>; };
-        };
+//        ak_o: ak_o {
+//            compatible = "zmk,behavior-adaptive-key";
+//            #binding-cells = <0>;
+//            bindings = <&kp O>;
+//
+//            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <200>; bindings = <&kp BSPC &kp O &kp U>; };
+//        };
 
 //        ak_u: ak_u {
 //            compatible = "zmk,behavior-adaptive-key";
@@ -502,7 +502,7 @@
 // | pDN | HOM | END |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &cp_x      &kp P        &kp L        &kp M       &kp B        &kp F                  &kp W    &kp C        &ak_o       &kp U        &kp Y       &cp_c
+   &cp_x      &kp P        &kp L        &kp M       &kp B        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &cp_c
    &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
    &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT

@@ -19,7 +19,7 @@
 #define _BTF     3
 #define _MOUS    4
 
-#define RGB_BASE RGB_COLOR_HSB(30,95,30)
+#define RGB_BASE RGB_COLOR_HSB(15,100,30)
 #define RGB_SYM RGB_COLOR_HSB(20,100,50)
 #define RGB_NAV RGB_COLOR_HSB(40,80,50)
 #define RGB_BTF RGB_COLOR_HSB(180,100,60)
@@ -461,7 +461,7 @@
         ak_b: ak_b {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp O>;
+            bindings = <&kp B>;
 
             akt_uo { trigger-keys = <S>; max-prior-idle-ms = <250>; bindings = <&kp C>; };
         };
@@ -485,7 +485,7 @@
         ak_y: ak_y {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp O>;
+            bindings = <&kp Y>;
 
             akt_uo { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&kp E>; };
         };

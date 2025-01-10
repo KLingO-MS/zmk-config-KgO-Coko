@@ -463,7 +463,25 @@
             #binding-cells = <0>;
             bindings = <&kp B>;
 
-            akt_uo { trigger-keys = <S>; max-prior-idle-ms = <250>; bindings = <&kp C>; };
+            akt_uo { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+        };
+
+        ak_j: ak_j {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp J>;
+
+            akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+            akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+        };
+
+        ak_x: ak_x {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp X>;
+
+            akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
+            akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
         };
 
         ak_o: ak_o {
@@ -488,6 +506,14 @@
             bindings = <&kp Y>;
 
             akt_uo { trigger-keys = <U>; max-prior-idle-ms = <250>; bindings = <&kp E>; };
+        };
+
+        ak_z: ak_z {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp Z>;
+
+            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
         };
 
 // ------------------------- MOD-MORPHS --------------------------------
@@ -520,7 +546,7 @@
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
    &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &ak_o       &ak_u        &ak_y       &cp_c
    &kp TAB    &hml LALT N  &hml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
-   &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
+   &kp PG_UP  &kp GRAVE    &ak_j        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &ak_z        &ak_x       &kp Q        &kp UP      &cp_v
    &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;

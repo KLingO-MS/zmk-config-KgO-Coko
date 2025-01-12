@@ -463,7 +463,7 @@
             #binding-cells = <0>;
             bindings = <&kp B>;
 
-            akt_uo { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
         };
 
         ak_j: ak_j {
@@ -473,6 +473,7 @@
 
             akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
             akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
+            akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
         };
 
         ak_x: ak_x {

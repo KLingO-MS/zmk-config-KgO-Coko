@@ -284,37 +284,37 @@
             layers = <_BASE>;
         };
 
-        combo_F {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-            key-positions = <LTI LTM>;
-            bindings = <&kp F>;
-            layers = <_BASE>;
-        };
+        // combo_F {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <125>;
+        //     key-positions = <LTI LTM>;
+        //     bindings = <&kp F>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_H {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-            key-positions = <LMI LMM>;
-            bindings = <&kp H>;
-            layers = <_BASE>;
-        };
+        // combo_H {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <125>;
+        //     key-positions = <LMI LMM>;
+        //     bindings = <&kp H>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_G {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-            key-positions = <RMM RMI>;
-            bindings = <&kp G>;
-            layers = <_BASE>;
-        };
+        // combo_G {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <125>;
+        //     key-positions = <RMM RMI>;
+        //     bindings = <&kp G>;
+        //     layers = <_BASE>;
+        // };
 
-        combo_W {
-            timeout-ms = <40>;
-            require-prior-idle-ms = <125>;
-            key-positions = <RTI RTM>;
-            bindings = <&kp W>;
-            layers = <_BASE>;
-        };
+        // combo_W {
+        //     timeout-ms = <40>;
+        //     require-prior-idle-ms = <125>;
+        //     key-positions = <RTI RTM>;
+        //     bindings = <&kp W>;
+        //     layers = <_BASE>;
+        // };
     };
 
     behaviors {
@@ -480,6 +480,7 @@
             bindings = <&kp B>;
 
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
+            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
         };
 
         // ak_j: ak_j {

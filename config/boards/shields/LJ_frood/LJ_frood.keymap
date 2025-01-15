@@ -19,7 +19,7 @@
 #define _BTF     3
 #define _MOUS    4
 
-#define RGB_BASE RGB_COLOR_HSB(15,100,30)
+#define RGB_BASE RGB_COLOR_HSB(10,100,30)
 #define RGB_SYM RGB_COLOR_HSB(20,100,50)
 #define RGB_NAV RGB_COLOR_HSB(40,80,50)
 #define RGB_BTF RGB_COLOR_HSB(180,100,60)
@@ -467,7 +467,7 @@
 
             akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
             akt_bh { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
-            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
             akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
@@ -480,7 +480,7 @@
             bindings = <&kp B>;
 
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
-            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
 
         // ak_j: ak_j {

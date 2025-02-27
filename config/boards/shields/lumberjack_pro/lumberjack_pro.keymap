@@ -284,37 +284,12 @@
             layers = <_BASE>;
         };
 
-        // combo_F {
-        //     timeout-ms = <40>;
-        //     require-prior-idle-ms = <125>;
-        //     key-positions = <LTI LTM>;
-        //     bindings = <&kp F>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_H {
-        //     timeout-ms = <40>;
-        //     require-prior-idle-ms = <125>;
-        //     key-positions = <LMI LMM>;
-        //     bindings = <&kp H>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_G {
-        //     timeout-ms = <40>;
-        //     require-prior-idle-ms = <125>;
-        //     key-positions = <RMM RMI>;
-        //     bindings = <&kp G>;
-        //     layers = <_BASE>;
-        // };
-
-        // combo_W {
-        //     timeout-ms = <40>;
-        //     require-prior-idle-ms = <125>;
-        //     key-positions = <RTI RTM>;
-        //     bindings = <&kp W>;
-        //     layers = <_BASE>;
-        // };
+        combo_W {
+            timeout-ms = <300>;
+            key-positions = <RTR RTM>;
+            bindings = <&mlc_ou>;
+            layers = <_BASE>;
+        };
     };
 
     behaviors {
@@ -503,21 +478,21 @@
         //     akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
         // };
 
-        ak_o: ak_o {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp O>;
+        // ak_o: ak_o {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp O>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <125>; bindings = <&kp 0>; };
-        };
+        //     akt_uo { trigger-keys = <U>; max-prior-idle-ms = <125>; bindings = <&kp 0>; };
+        // };
 
-        ak_u: ak_u {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp U>;
+        // ak_u: ak_u {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp U>;
 
-            akt_you { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U>; };
-        };
+        //     akt_you { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U>; };
+        // };
 
         ak_y: ak_y {
             compatible = "zmk,behavior-adaptive-key";
@@ -563,7 +538,7 @@
 // | pDN | HOM | END |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &ak_o       &ak_u        &ak_y       &cp_c
+   &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &kp O       &kp U        &ak_y       &cp_c
    &kp TAB    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
    &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT

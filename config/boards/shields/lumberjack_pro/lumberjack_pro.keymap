@@ -284,7 +284,7 @@
             layers = <_BASE>;
         };
 
-        combo_W {
+        combo_OU {
             timeout-ms = <300>;
             key-positions = <RTR RTM>;
             bindings = <&mlc_ou>;
@@ -494,13 +494,13 @@
         //     akt_you { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U>; };
         // };
 
-        ak_y: ak_y {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&kp Y>;
+        // ak_y: ak_y {
+        //     compatible = "zmk,behavior-adaptive-key";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp Y>;
 
-            akt_uo { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
-        };
+        //     akt_uo { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
+        // };
 
         ak_r: ak_r {
             compatible = "zmk,behavior-adaptive-key";
@@ -538,7 +538,7 @@
 // | pDN | HOM | END |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &kp O       &kp U        &ak_y       &cp_c
+   &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &cp_c
    &kp TAB    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
    &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
@@ -548,14 +548,14 @@
                 nav_layer {
 // -------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |        |     |      |      |      |     |     |
-// |     |  8  |  6  |  4  |  2  | INS |        | pUP | HOME |  UP  | END  | ESC |     |
-// |     |  7  |  5  |  3  |  1  | PSC |        | pDN | LEFT | SPC  | RGHT | RET |     |
+// |     |  8  |  7  |  6  |  5  | INS |        | pUP | HOME |  UP  | END  | ESC |     |
+// |     |  4  |  3  |  2  |  1  | PSC |        | pDN | LEFT | SPC  | RGHT | RET |     |
 // |     |     | . , |  9  |  0  |     |  MUTE  |     | TAB  | DOWN | DEL  |     |     |
 // |     |     |     |_BASE|_SYM(BSPC) |        |    SHFT    |_BASE |      |     |     |
                         bindings = <
    &none   &none        &none         &none        &none         &none                &none     &none           &none           &none            &none         &none
-   &none   &kp N8       &kp N6        &kp N4       &kp N2        &kp INS              &kp PG_UP &kp HOME        &kp UP          &kp END          &kp ESC       &none
-   &none   &hml LALT N7 &hml LCTRL N5 &hml LGUI N3 &hsl LSHFT N1 &kp PSCRN            &kp PG_DN &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
+   &none   &kp N8       &kp N7        &kp N6       &kp N5        &kp INS              &kp PG_UP &kp HOME        &kp UP          &kp END          &kp ESC       &none
+   &none   &hml LALT N4 &hml LCTRL N3 &hml LGUI N2 &hsl LSHFT N1 &kp PSCRN            &kp PG_DN &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
    &none   &none        &kp KP_DOT    &kp N9       &kp N0        &none     &kp C_MUTE &none     &kp TAB         &kp DOWN        &kp DEL          &none         &none
    &none   &none        &none         &to_BASE          &bst _SYM BSPC                      &kp LSHFT           &to_BASE        &none            &none         &none
                         >;
@@ -565,14 +565,14 @@
                 sym_layer {
 // --------------------------------------------------------------------------------
 // |     |     |     |     |     |     |      |     |     |     |     |     |     |
-// |     |  \  |  |  |  _  |  =  |  \  |      |  ~  |  "  |  ;  |  :  |  !  |     |
-// |     |  /  |  *  |  -  |  +  |  §  |      |  `  |  '  |  ,  |  .  |  ?  |     |
+// |     |  \  |  |  |  _  |  =  |  \  |      |  `  |  "  |  ;  |  :  |  !  |     |
+// |     |  /  |  *  |  -  |  +  |  §  |      |  ~  |  '  |  ,  |  .  |  ?  |     |
 // |     |     |  &  |  ^  |  %  |     | MUTE |     |  @  |  #  |  $  |     |     |
 // |     |     |     |     |   BSPC    |      | _NAV(SPC) |     |     |     |     |
                         bindings = <
    &none   &none           &none           &none           &none           &none               &none     &none          &none           &none          &none           &none
-   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp TILDE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL        &none
-   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp GRAVE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK &none
+   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp GRAVE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL        &none
+   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp TILDE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK &none
    &none   &none           &kp AMPS        &kp CARET       &kp PRCNT       &none    &kp C_MUTE &none     &kp AT         &kp HASH        &kp DLLR       &none           &none
    &none   &none           &none           &none                   &kp BSPC                         &spt _NAV SPACE     &none           &none          &none           &none
                         >;

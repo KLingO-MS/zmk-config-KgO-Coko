@@ -100,30 +100,6 @@
                 ;
         };
 
-        // muc_the: macro_uc_the {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp LS(T)>
-        //         , <&kp H>
-        //         , <&kp E>
-        //         ;
-        // };
-
-        // mlc_the: macro_lc_the {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp T>
-        //         , <&kp H>
-        //         , <&kp E>
-        //         ;
-        // };
-
         mlc_qu: macro_lc_qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -134,29 +110,6 @@
                 , <&kp U>
                 ;
         };
-
-        // mlc_gh: macro_lc_gh {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp G>
-        //         , <&kp H>
-        //         ;
-        // };
-
-        // mlc_ing: macro_lc_ing {
-        //     compatible = "zmk,behavior-macro";
-        //     #binding-cells = <0>;
-        //     wait-ms = <0>;
-        //     tap-ms = <5>;
-        //     bindings
-        //         = <&kp I>
-        //         , <&kp N>
-        //         , <&kp G>
-        //         ;
-        // };
     };
 
     combos {
@@ -286,7 +239,7 @@
 
         combo_OU {
             timeout-ms = <300>;
-            key-positions = <RTR RTM>;
+            key-positions = <RTM RTR>;
             bindings = <&mlc_ou>;
             layers = <_BASE>;
         };
@@ -374,7 +327,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&ak_d>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -386,7 +339,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -398,7 +351,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <120>;
+            require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -441,12 +394,12 @@
             bindings = <&kp D>;
 
             akt_th { trigger-keys = <T>; max-prior-idle-ms = <250>; bindings = <&kp H>; };
-            akt_bh { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
-            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_ch { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_wh { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_sh { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
             akt_gh { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
+
+            akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
         };
 
         ak_b: ak_b {
@@ -455,52 +408,8 @@
             bindings = <&kp B>;
 
             akt_sc { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp C>; };
-            akt_pr { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
-            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
+            akt_ph { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp H>; };
         };
-
-        // ak_j: ak_j {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp J>;
-
-        //     akt_ws { trigger-keys = <W>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-        //     akt_gs { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp S>; };
-        //     akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
-        // };
-
-        // ak_x: ak_x {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp X>;
-
-        //     akt_rl { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>; };
-        //     akt_kd { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp D>; };
-        // };
-
-        // ak_o: ak_o {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp O>;
-
-        //     akt_uo { trigger-keys = <U>; max-prior-idle-ms = <125>; bindings = <&kp 0>; };
-        // };
-
-        // ak_u: ak_u {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp U>;
-
-        //     akt_you { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp O &kp U>; };
-        // };
-
-        // ak_y: ak_y {
-        //     compatible = "zmk,behavior-adaptive-key";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp Y>;
-
-        //     akt_uo { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
-        // };
 
         ak_r: ak_r {
             compatible = "zmk,behavior-adaptive-key";
@@ -508,6 +417,23 @@
             bindings = <&kp R>;
 
             akt_ng { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp G>; };
+        };
+
+        ak_p: ak_p {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp P>;
+
+            akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
+            akt_bn { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp N>; };
+        };
+
+        ak_y: ak_y {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp Y>;
+
+            akt_ue { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>; };
         };
 
 // ------------------------- MOD-MORPHS --------------------------------
@@ -532,19 +458,20 @@
                 base_layer {
 // ----------------------------------------------------------------------------------
 // | ESC |  1  |  2  |  3  |  4  |  5  |        |  6  |  7  |  8  |  9  |  0  | DEL |
-// | cut |  P  |  L  |  M  |  B  |  F  |        |  W  |  C  |  O  |  U  |  Y  | cpy |
+// | cut |  B  |  L  |  M  |  P  |  F  |        |  W  |  C  |  O  |  U  |  Y  | cpy |
 // | TAB |  N  |  R  |  T  |  D  |  H  |        |  G  |  S  |  A  |  E  |  I  | RET |
 // | pUP | ` ~ |  J  |  V  |  K  |  =  |  MUTE  |  +  |  Z  |  X  |  Q  | UP  | pst |
 // | pDN | HOM | END |_BTF |_SYM(BSPC) |        | _NAV(SPC) |_BTF | LEFT| DOWN| RGHT|
                         bindings = <
    &kp ESC    &kp N1       &kp N2       &kp N3      &kp N4       &kp N5                 &kp N6   &kp N7       &kp N8      &kp N9       &kp N0      &kp DEL
-   &cp_x      &kp P        &kp L        &kp M       &ak_b        &kp F                  &kp W    &kp C        &kp O       &kp U        &kp Y       &cp_c
+   &cp_x      &ak_b        &kp L        &kp M       &ak_p        &kp F                  &kp W    &kp C        &kp O       &kp U        &ak_y       &cp_c
    &kp TAB    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
    &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
+
                 nav_layer {
 // -------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |        |     |      |      |      |     |     |

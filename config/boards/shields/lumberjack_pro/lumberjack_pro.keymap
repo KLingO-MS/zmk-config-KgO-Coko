@@ -157,16 +157,25 @@
 
 // ------------------------- MODS COMBOS --------------------------------
         combo_CAPS {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             key-positions = <LTI RTI>;
             bindings = <&caps_word>;
-            require-prior-idle-ms = <250>;
+            require-prior-idle-ms = <100>;
             layers = <_BASE>;
         };
 
+        combo_SHIFT {
+            timeout-ms = <60>;
+            key-positions = <LMI RMI>;
+            bindings = <&sk LSHIFT>;
+            require-prior-idle-ms = <100>;
+            layers = <_BASE>;
+        };
+
+
 // ------------------------- SYMBOL COMBOS --------------------------------
         combo_LPAR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LHI LMI>;
             bindings = <&kp LPAR>;
@@ -174,7 +183,7 @@
         };
 
         combo_RPAR {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMI RHI>;
             bindings = <&kp RPAR>;
@@ -182,7 +191,7 @@
         };
 
         combo_LBRC {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMM LHI>;
             bindings = <&kp LBRC>;
@@ -190,7 +199,7 @@
         };
 
         combo_RBRC {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMM RHI>;
             bindings = <&kp RBRC>;
@@ -198,7 +207,7 @@
         };
 
         combo_LBKT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMR LHI>;
             bindings = <&kp LBKT>;
@@ -206,7 +215,7 @@
         };
 
         combo_RBKT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMR RHI>;
             bindings = <&kp RBKT>;
@@ -214,7 +223,7 @@
         };
 
         combo_GT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <RMP RHI>;
             bindings = <&kp GT>;
@@ -222,7 +231,7 @@
         };
 
         combo_LT {
-            timeout-ms = <50>;
+            timeout-ms = <60>;
             require-prior-idle-ms = <200>;
             key-positions = <LMP LHI>;
             bindings = <&kp LT>;
@@ -287,7 +296,7 @@
         hml: hrm_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             require-prior-idle-ms = <250>;
@@ -300,7 +309,7 @@
         hmr: hrm_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             require-prior-idle-ms = <250>;
@@ -312,7 +321,7 @@
         rml: akr_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
             require-prior-idle-ms = <250>;
@@ -327,7 +336,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <100>;
+            // require-prior-idle-ms = <100>;
             bindings = <&kp>, <&ak_d>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -339,7 +348,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <100>;
+            // require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -351,7 +360,7 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
             quick-tap-ms = <170>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <100>;
+            // require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -360,9 +369,9 @@
         bst: backspace-tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -371,8 +380,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <170>;
             //require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
         };
@@ -425,8 +434,8 @@
             bindings = <&kp P>;
 
             akt_tv { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp V>; };
-            akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
-            akt_cr { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            // akt_br { trigger-keys = <B>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
+            // akt_cr { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp R>; };
         };
 
         ak_y: ak_y {
@@ -468,7 +477,7 @@
    &cp_x      &ak_b        &kp L        &kp M       &ak_p        &kp F                  &kp W    &kp C        &kp O       &kp U        &ak_y       &cp_c
    &kp TAB    &hml LALT N  &rml LCTRL R &hml LGUI T &asl LSHFT D &kp H                  &kp G    &hsr LSHFT S &hmr LGUI A &hmr LCTRL E &hmr LALT I &kp RET
    &kp PG_UP  &kp GRAVE    &kp J        &kp V       &kp K        &kp EQUAL  &kp C_MUTE  &kp PLUS &kp Z        &kp X       &kp Q        &kp UP      &cp_v
-   &kp PG_DN  &kp HOME     &kp END      &mo_BTF          &bst _SYM BSPC                     &spt _NAV SPACE   &mo_BTF     &kp LEFT     &kp DOWN    &kp RIGHT
+   &kp PG_DN  &kp HOME     &kp END      &mo _BTF         &bst _SYM BSPC                     &spt _NAV SPACE   &mo _BTF    &kp LEFT     &kp DOWN    &kp RIGHT
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -485,7 +494,7 @@
    &none   &kp N8       &kp N7        &kp N6       &kp N5        &kp INS              &kp PG_UP &kp HOME        &kp UP          &kp END          &kp ESC       &none
    &none   &hml LALT N4 &hml LCTRL N3 &hml LGUI N2 &hsl LSHFT N1 &kp PSCRN            &kp PG_DN &hsr LSHFT LEFT &hmr LGUI SPACE &hmr LCTRL RIGHT &hmr LALT RET &none
    &none   &none        &kp KP_DOT    &kp N9       &kp N0        &none     &kp C_MUTE &none     &kp TAB         &kp DOWN        &kp DEL          &none         &none
-   &none   &none        &none         &to_BASE          &bst _SYM BSPC                      &kp LSHFT           &to_BASE        &none            &none         &none
+   &none   &none        &none         &none             &bst _SYM BSPC                      &kp LSHFT           &none           &none            &none         &none
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };
@@ -510,16 +519,16 @@
                 btf_layer {
 // --------------------------------------------------------------------------------
 // | CLR | BT1 | BT2 | BT3 | BT4 | BT5 |      |     |     |     |     |     | CLS |
-// |     |  [  |  ]  |  {  |  }  |     |      |     | F1  | F2  | F3  | F4  |     |
-// |     | ALT | CTL | GUI | SFT |     |      |     | F5  | F6  | F7  | F8  |     |
-// |     |  <  |  >  |  (  |  )  |     | BOOT |     | F9  | F10 | F11 | F12 |     |
+// |     | br+ | hu+ | sa+ | sp+ |     |      |     | F1  | F2  | F3  | F4  |     |
+// | eff | ALT | CTL | GUI | SFT |     |      |     | F5  | F6  | F7  | F8  |     |
+// |     | br- | hu- | sa- | sp- |     | BOOT |     | F9  | F10 | F11 | F12 |     |
 // |     |     |     | APP |   RESET   |      |  LOCK SCR | APP |     |     |     |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LA(F4)
-   &none      &kp LBKT     &kp RBKT     &kp LBRC     &kp RBRC     &none                &none  &kp F1  &kp F2    &kp F3   &kp F4   &none                
-   &none      &kp LALT     &kp LCTRL    &kp LGUI     &kp LSHFT    &none                &none  &kp F5  &kp F6    &kp F7   &kp F8   &none                
-   &none      &kp LT       &kp GT       &kp LPAR     &kp RPAR     &none    &to_BOOT    &none  &kp F9  &kp F10   &kp F11  &kp F12  &none    
-   &none      &none        &none        &kp K_APP       &kp LC(LA(DEL))                  &kp LG(L)    &kp K_APP &none    &none    &none
+   &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1.   &bt BT_SEL 2.   &bt BT_SEL 3.   &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LA(F4)
+   &none           &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &none                &none  &kp F1  &kp F2    &kp F3   &kp F4   &none                
+   &rgb_ug RGB_EFF &kp LALT.       &kp LCTRL       &kp LGUI.       &kp LSHFT       &none                &none  &kp F5  &kp F6    &kp F7   &kp F8   &none                
+   &none           &rgb_ug RGB_BRD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &none    &to_BOOT    &none  &kp F9  &kp F10   &kp F11  &kp F12  &none    
+   &none           &none           &none           &kp K_APP             &kp LC(LA(DEL))                  &kp LG(L)    &kp K_APP &none    &none    &none
                         >;
                         sensor-bindings = <&rot_kp C_BRI_INC C_BRI_DEC>;
                 };   

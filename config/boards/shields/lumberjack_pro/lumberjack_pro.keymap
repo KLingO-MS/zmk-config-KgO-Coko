@@ -502,16 +502,16 @@
                 sym_layer {
 // --------------------------------------------------------------------------------
 // |     |     |     |     |     |     |      |     |     |     |     |     |     |
-// |     |  \  |  |  |  _  |  =  |  \  |      |  `  |  "  |  ;  |  :  |  !  |     |
-// |     |  /  |  *  |  -  |  +  |  §  |      |  ~  |  '  |  ,  |  .  |  ?  |     |
+// |     |  \  |  |  |  _  |  =  |  \  |      |  `  |  !  |  ;  |  :  |  "  |     |
+// |     |  /  |  *  |  -  |  +  |  §  |      |  ~  |  ?  |  ,  |  .  |  '  |     |
 // |     |     |  &  |  ^  |  %  |     | MUTE |     |  @  |  #  |  $  |     |     |
 // |     |     |     |     |   BSPC    |      | _NAV(SPC) |     |     |     |     |
                         bindings = <
-   &none   &none           &none           &none           &none           &none               &none     &none          &none           &none          &none           &none
-   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp GRAVE &kp DQT        &kp SEMI        &kp COLON      &kp EXCL        &none
-   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp TILDE &hsr LSHFT SQT &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT QMARK &none
-   &none   &none           &kp AMPS        &kp CARET       &kp PRCNT       &none    &kp C_MUTE &none     &kp AT         &kp HASH        &kp DLLR       &none           &none
-   &none   &none           &none           &none                   &kp BSPC                         &spt _NAV SPACE     &none           &none          &none           &none
+   &none   &none           &none           &none           &none           &none               &none     &none            &none           &none          &none         &none
+   &none   &kp BSLH        &kp PIPE        &kp UNDER       &kp EQUAL       &kp NUHS            &kp GRAVE &kp EXCL         &kp SEMI        &kp COLON      &kp DQT       &none
+   &none   &hml LALT SLASH &hml LCTRL STAR &hml LGUI MINUS &hsl LSHFT PLUS &kp NUBS            &kp TILDE &hsr LSHFT QMARK &hmr LGUI COMMA &hmr LCTRL DOT &hmr LALT SQT &none
+   &none   &none           &kp AMPS        &kp CARET       &kp PRCNT       &none    &kp C_MUTE &none     &kp AT           &kp HASH        &kp DLLR       &none         &none
+   &none   &none           &none           &none                   &kp BSPC                         &spt _NAV SPACE       &none           &none          &none         &none
                         >;
                         sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
                 };

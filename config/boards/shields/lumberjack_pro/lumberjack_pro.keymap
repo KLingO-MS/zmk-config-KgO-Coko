@@ -524,9 +524,9 @@
 // |     | br- | hu- | sa- | sp- |     | BOOT |     | F9  | F10 | F11 | F12 |     |
 // |     |     |     | APP |   RESET   |      |  LOCK SCR | APP |     |     |     |
                         bindings = <
-   &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1.   &bt BT_SEL 2.   &bt BT_SEL 3.   &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LA(F4)
+   &bt BT_CLR      &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4         &none  &none   &none     &none    &none    &kp LA(F4)
    &none           &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_SPI &none                &none  &kp F1  &kp F2    &kp F3   &kp F4   &none                
-   &rgb_ug RGB_EFF &kp LALT.       &kp LCTRL       &kp LGUI.       &kp LSHFT       &none                &none  &kp F5  &kp F6    &kp F7   &kp F8   &none                
+   &rgb_ug RGB_EFF &kp LALT        &kp LCTRL       &kp LGUI        &kp LSHFT       &none                &none  &kp F5  &kp F6    &kp F7   &kp F8   &none                
    &none           &rgb_ug RGB_BRD &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_SPD &none    &to_BOOT    &none  &kp F9  &kp F10   &kp F11  &kp F12  &none    
    &none           &none           &none           &kp K_APP             &kp LC(LA(DEL))                  &kp LG(L)    &kp K_APP &none    &none    &none
                         >;
